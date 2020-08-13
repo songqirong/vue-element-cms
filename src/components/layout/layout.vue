@@ -1,0 +1,42 @@
+<template>
+    <div class="app-wrap">
+        <el-container style="height: 100%; border: 1px solid #eee">
+            <el-aside width="200px" style="background-color: rgb(238, 241, 246)">
+                <my-aside></my-aside>
+            </el-aside>
+            <el-container>
+                <el-header style="text-align: right; font-size: 12px">
+                  <my-header></my-header>
+                </el-header>
+                <el-main>
+                    <my-main></my-main>
+                </el-main>
+            </el-container>
+        </el-container>
+    </div>
+</template>
+<script>
+import {myHeader,myAside,myMain} from '../index';
+export default {
+    name:'Layout',
+    components:{
+    myMain,
+    myAside,
+    myHeader
+  },
+}
+</script>
+<style lang="scss" scoped>
+.app-wrap{
+    height: 100%;
+    .el-aside {
+      color: #333;
+    }
+
+    .el-header {
+        background-color: #B3C0D1;
+        color: #333;
+        line-height: 60px;
+    }
+}
+</style>
