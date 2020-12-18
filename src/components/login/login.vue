@@ -61,7 +61,7 @@ import {setCookie} from '@/untils/cookieTools.js'
         this.$refs[formName].validate((valid) => {
           if (valid) {
             // alert(valid);
-            this.$http.fetchLogin({username:this.ruleForm.username,password:this.ruleForm.password}).then(res=>{
+            this.$http.fetchLogin({username:this.ruleForm.username.toString(),password:this.ruleForm.password}).then(res=>{
                 console.log(res)
                 if(res.err==0){
                     this.$message({
