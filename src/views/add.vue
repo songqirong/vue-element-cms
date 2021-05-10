@@ -13,7 +13,7 @@
       <el-form-item label="商品价格" prop="price" class="item">
         <el-input v-model="ruleForm.price"></el-input>
       </el-form-item>
-      <el-form-item label="商品描述" prop="desc" class="item" size="medium">
+      <el-form-item label="商品描述" prop="desc" class="item" size="medium" >
         <el-input type="textarea" v-model="ruleForm.desc"></el-input>
       </el-form-item>
       <el-form-item label="商品类别" prop="cate">

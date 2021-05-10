@@ -1,14 +1,16 @@
 <template>
     <div class="goodsshow">
-      <el-row type='flex' align='middle'>
-            <el-col :span="4">
-                <span>商品品类：</span>
-            </el-col>
-            <el-col :span="20">
-                <!-- v-model 是 :value 和 @input 的简写 -->
-                <my-cate-select v-model="cate" :cates="cates"/>
-            </el-col>
+      <div class="row-box">
+        <el-row type='flex' align='middle'>
+              <el-col :span="2">
+                  <span>商品品类：</span>
+              </el-col>
+              <el-col :span="20">
+                  <!-- v-model 是 :value 和 @input 的简写 -->
+                  <my-cate-select v-model="cate" :cates="[{_id: 1, cate_zh: '全部', cate_en: undefined}, ...cates]"/>
+              </el-col>
         </el-row>
+      </div>
       <el-table :data="goods" v-show="show" style="width: 100%" height="400">
           <el-table-column prop="img" label="商品图片" width="180" align="center">
             <template slot-scope="scope">
@@ -100,7 +102,6 @@ export default {
           page:this.page,
           limit:5
         }
-        if(this.cate=='all'){params.cate=''}
         this.$http.fetchGetCateGoods(params).then(res=>{
           res.data.forEach(item=>{
             if(item.hot){
@@ -153,7 +154,7 @@ export default {
     },
     mounted(){
       this.getCates({}).then(()=>{
-          this.cate='all'
+          this.cate=undefined
       })
       this.init()
     } ,  
@@ -193,6 +194,10 @@ export default {
 }
 .price-filter{
   color: red;
+}
+.row-box{
+  box-sizing: border-box;
+  padding: 30px;
 }
   
 </style>

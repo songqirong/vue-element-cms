@@ -1,6 +1,7 @@
 <template>
     <div class="header">
         <el-dropdown trigger="click" @command="handleCommand">
+            <!-- <span></span> -->
             <i class="el-icon-setting" style="margin-right: 15px"></i>
             <el-dropdown-menu slot="dropdown">
                 <el-dropdown-item>个人中心</el-dropdown-item>
@@ -8,13 +9,19 @@
                 <el-dropdown-item>切换账号</el-dropdown-item>
             </el-dropdown-menu>
         </el-dropdown>
-        <span v-text="username"></span>
+        <span v-text="user.username"></span>
     </div>
 </template>
 <script>
-import {getCookie,removeCookie} from '@/untils/cookieTools.js'
+import {getCookie,removeCookie} from '@/untils/cookieTools.js';
 export default {
     name:'Header',
+    props:{
+        user:{
+            type: Object,
+            required: true,
+        }
+    },
     computed:{
         username(){
             return getCookie('username')

@@ -1,4 +1,4 @@
-import {fetchGetCates } from '@/untils/api.js'
+import { fetchGetCates } from '@/untils/api.js'
 export default{
     namespaced:true,
     // 存放公共数据
@@ -12,7 +12,7 @@ export default{
     },
     // 公共方法,用来改变state里面的数据(参数state)
     mutations:{
-        changeCates(state,payload){
+        changeCates(state, payload){
             // console.log(payload)
             if(payload.err==0){
                 state.cates=payload.data

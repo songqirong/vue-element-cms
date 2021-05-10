@@ -97,6 +97,13 @@ export function fetchGetBanner(params){
         params
     })
 }
+export function fetchUserInfo(data){
+    return axios({
+        url: '/users/cms/getUserInfo',
+        method: 'POST',
+        data,
+    })
+}
 
 export default{
     fetchLogin,

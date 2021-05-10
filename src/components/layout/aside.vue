@@ -1,7 +1,7 @@
 <template>
     <div class="aside">
         <div class="avatar">
-            <el-avatar :size="100" cover src="https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg"></el-avatar>
+            <el-avatar :size="100" cover :src="user.user_avatar"></el-avatar>
         </div>
         <el-menu :default-openeds="['1']">
             <el-submenu v-for='item in navs' :key='item.id' :index="item.id+''">
@@ -22,6 +22,12 @@
 import navs from '@/untils/routerNav'
 export default {
     name:'Aside',
+    props:{
+        user:{
+            type: Object,
+            required: true,
+        }
+    },
     data(){
         return{
             navs

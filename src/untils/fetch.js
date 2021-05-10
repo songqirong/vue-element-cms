@@ -17,7 +17,8 @@ instance.interceptors.response.use((response)=>{
         if(response.data&&response.data.success){
             return response.data.data
         }else{
-            alert("数据异常,请重试")
+            location.href="/#/login"
+            // alert("数据异常,请重试")
         }
     }
 },(err)=>{
