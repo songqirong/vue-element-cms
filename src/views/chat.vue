@@ -30,7 +30,7 @@ export default {
         }
     },
     mounted() {
-        this.socket = io('http://localhost:3000')
+        this.socket = io('https://api.persion.cn')
         this.socket.on('connect', function() {
             console.log('socket连接成功')
         })

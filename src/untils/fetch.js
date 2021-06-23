@@ -1,5 +1,5 @@
 import axios from 'axios';
-let baseURL = 'http://localhost:9000/api/v1'
+let baseURL = 'https://api.persion.cn/api/v1'
 const instance = axios.create({
     baseURL,
     timeout:7000,
@@ -17,8 +17,10 @@ instance.interceptors.response.use((response)=>{
         if(response.data&&response.data.success){
             return response.data.data
         }else{
-            location.href="/#/login"
+            if(location.pathname !== '/login'){
+                location.href="/login"
             // alert("数据异常,请重试")
+            }
         }
     }
 },(err)=>{

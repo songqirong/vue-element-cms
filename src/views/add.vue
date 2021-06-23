@@ -25,7 +25,7 @@
       <el-form-item label="商品图片" prop="img">
         <el-upload
             class="avatar-uploader"
-            action="http://localhost:9000/api/v1/upload/img"
+            action="https://api.persion.cn/api/v1/upload/img"
             :show-file-list="false"
             :on-success="imgUpload">
             <img v-if="ruleForm.img" :src='img.imgBaseUrl+ruleForm.img' class="avatar">

@@ -23,7 +23,7 @@ navs.map(item=>{
     }
 })
 const router = new VueRouter({
-    mode:'hash',
+    mode:'history',
     routes:[
         ...routes,
         {path:'/login',component:Login},
