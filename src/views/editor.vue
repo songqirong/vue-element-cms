@@ -14,7 +14,7 @@
       <el-table :data="goods" v-show="show" style="width: 100%" height="400">
           <el-table-column prop="img" label="商品图片" width="180" align="center">
             <template slot-scope="scope">
-                <img class="qf-good-img" :src="img.imgBaseUrl+scope.row.img">
+                <img class="qf-good-img" :src="scope.row.img">
             </template>
           </el-table-column>
           <el-table-column prop="name" label="商品名称" width="120" align="center">
@@ -63,15 +63,12 @@
 </template>
 <script>
 //代码2   存一个新变量 就能够修改 数组
-
-import img from '@/untils/img'
 import {myCateSelect} from '@/components/index'
 import {mapActions,mapState} from 'vuex' 
 export default {
   
     data() {
       return {
-        img,
         page:1,
         show:false,
         cate:'',

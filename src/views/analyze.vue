@@ -3,7 +3,7 @@
       <el-table :data="bannerArr" v-show="show" style="width: 100%" height="400">
           <el-table-column prop="img" label="轮播图片" width="180" align="center">
             <template slot-scope="scope">
-                <img class="qf-good-img" :src="img.imgBaseUrl+scope.row.img">
+                <img class="qf-good-img" :src="scope.row.img">
             </template>
           </el-table-column>
           <el-table-column prop="desc" label="图片描述" width="250" align="center">
@@ -38,12 +38,10 @@
     </div>
 </template>
 <script>
-import img from '@/untils/img'
 export default {
   
     data() {
       return {
-        img,
         page:1,
         show:false,
         cate:'',

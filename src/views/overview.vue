@@ -13,10 +13,10 @@
       <el-form-item label="图片" prop="img">
         <el-upload
             class="avatar-uploader"
-            action="https://api.persion.cn/api/v1/upload/img"
+            action="https:/static.persion.cn/upload/images?type=banners"
             :show-file-list="false"
             :on-success="imgUpload">
-            <img v-if="ruleForm.img" :src='img.imgBaseUrl+ruleForm.img' class="avatar">
+            <img v-if="ruleForm.img" :src='ruleForm.img' class="avatar">
             <i v-else class="el-icon-plus avatar-uploader-icon"></i>
         </el-upload>
       </el-form-item>
@@ -28,11 +28,9 @@
     </div>
 </template>
 <script>
-import img from '@/untils/img'
 export default {    
     data() {
       return {
-        img,
         ruleForm: {
           desc: '',
           img:''
@@ -88,7 +86,7 @@ export default {
         // console.log(this.ruleForm)
       },
       imgUpload(res){
-        // console.log(res);
+        console.log(res);
           this.ruleForm.img = res.data.url
       },
      }
