@@ -13,7 +13,7 @@
       <el-form-item label="图片" prop="img">
         <el-upload
             class="avatar-uploader"
-            action="https:/static.persion.cn/upload/images?type=banners"
+            action="https://static.persion.cn/upload/images?type=banners"
             :show-file-list="false"
             :on-success="imgUpload">
             <img v-if="ruleForm.img" :src='ruleForm.img' class="avatar">
